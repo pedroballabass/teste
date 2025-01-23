@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Upload de Arquivo</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="category">Categoria:</label>
+                <select name="category" id="category" class="form-control">
+                    {% for category in categories %}
+                        <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="file">Escolha um arquivo:</label>
+                <input type="file" name="file" class="form-control" id="file">
+            </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+        <a href="/" class="btn btn-secondary mt-3">Voltar</a>
+    </div>
+</body>
+</html>
